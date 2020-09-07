@@ -13,12 +13,14 @@ import json
 
 
 class Dora(object):
+    """A simple scraping tool"""
 
     def __init__(self):
         self.__searched_urls = set()
         self.__result = []
 
     def search(self, search_word: str, base_url: str, depth_limit: int=0):
+        """scraping by search_word(regular expression)"""
         self.__search(search_word,base_url,depth_limit)
         print(json.dumps(self.__result, ensure_ascii=False))
 
